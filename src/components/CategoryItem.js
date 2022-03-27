@@ -1,13 +1,15 @@
 import React from 'react'
 import { View,StyleSheet,Image,Text } from 'react-native'
 
-export const CategoryItem = () => {
+export const CategoryItem = ({name, imageUrl}) => {
+
+  
   return (
       <View style={styles.container}>
           <View style={styles.imageContainer}>
-              <Image style={styles.image} source={require('../assets/images/burger.png')}/>
+              <Image style={styles.image} source={imageUrl}/>
           </View>
-          <Text style={styles.header}>Burger</Text>
+          <Text style={styles.header}>{name}</Text>
       </View>
   )
 }
@@ -19,6 +21,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginVertical: 15,
         marginHorizontal: 25,
+        marginRight: 5,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center'
